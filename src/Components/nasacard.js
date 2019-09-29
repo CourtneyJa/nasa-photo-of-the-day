@@ -1,6 +1,15 @@
 import React, {useState, useEffect} from "react";
 import PhotoCard from "./photocard";
+import styled from 'styled-components';
 import axios from "axios";
+
+
+const NasaContainer= styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 5%;
+text-color: white;`
 
 
 export default function NasaPhoto(){
@@ -19,8 +28,10 @@ export default function NasaPhoto(){
     },[]);
 
     return (
-        <div className="nasa-container">
+        <NasaContainer className="nasa-container">
             <PhotoCard title = {pic.title} date = {pic.date} key = {pic.id} picture= {pic.url} author = {pic.copyright} description={pic.explanation}/>
-        </div>
+            
+        </NasaContainer>
     );
 }
+
